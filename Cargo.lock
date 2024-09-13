@@ -126,6 +126,7 @@ version = "1.0.0"
 dependencies = [
  "anyhow",
  "clap",
+ "rand",
  "rs-snowflake",
  "string-join",
  "uuid",

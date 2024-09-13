@@ -14,6 +14,8 @@ enum Commands {
     Uuid(generators::uuid::Uuid),
     /// Generate Snowflake
     Snowflake(generators::snowflake::Snowflake),
+    /// Generate a random string of characters
+    Rand(generators::rand::Rand),
 }
 
 impl Deref for Commands {
@@ -24,6 +26,7 @@ impl Deref for Commands {
             Commands::Xid(xid) => xid,
             Commands::Uuid(uuid) => uuid,
             Commands::Snowflake(snowflake) => snowflake,
+            Commands::Rand(rand) => rand,
         }
     }
 }
