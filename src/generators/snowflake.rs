@@ -8,6 +8,7 @@ pub(crate) struct Snowflake {
     /// The Machine ID
     #[arg(long, short, default_value_t = 0)]
     machine: i32,
+
     /// The Node ID
     #[arg(long, short, default_value_t = 0)]
     node: i32,

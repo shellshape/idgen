@@ -7,10 +7,10 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-anyhow = "^1.0.66"
-clap = { version = "^4.0.18", features = ["derive"] }
-uuid = { version = "^1.2.1", features = ["v4"] }
+anyhow = "1"
+clap = { version = "4", features = ["derive"] }
+uuid = { version = "1", features = ["v4"] }
 rs-snowflake = "*"
-xid = "^1"
-string-join = "^0.1.2"
-rand = "0.8.5"
+xid = "1"
+string-join = "*"
+rand = "*"

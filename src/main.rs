@@ -10,10 +10,13 @@ use string_join::Join;
 enum Commands {
     /// Generate XIDs (see https://github.com/rs/xid)
     Xid(generators::xid::Xid),
-    /// Generate UUIDs (aka. GUIDs)
+
+    /// Generate UUIDs v4 (aka. GUIDs)
     Uuid(generators::uuid::Uuid),
+
     /// Generate Snowflake
     Snowflake(generators::snowflake::Snowflake),
+
     /// Generate a random string of characters
     Rand(generators::rand::Rand),
 }
