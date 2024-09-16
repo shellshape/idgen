@@ -2,7 +2,6 @@ use super::Generator;
 use crate::{util, Cli};
 use anyhow::Result;
 use clap::Args;
-use rand::{rngs::OsRng, Rng};
 use std::ops::RangeInclusive;
 
 #[derive(Args, Clone)]
