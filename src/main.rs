@@ -1,9 +1,9 @@
 mod generators;
-
-use std::{io, ops::Deref};
+mod util;
 
 use clap::{Parser, Subcommand};
 use generators::Generator;
+use std::{io, ops::Deref};
 use string_join::Join;
 
 #[derive(Subcommand, Clone)]
@@ -19,6 +19,9 @@ enum Commands {
 
     /// Generate a random string of characters
     Rand(generators::rand::Rand),
+
+    /// Generate a random password
+    Password(generators::password::Password),
 }
 
 impl Deref for Commands {
@@ -30,6 +33,7 @@ impl Deref for Commands {
             Commands::Uuid(uuid) => uuid,
             Commands::Snowflake(snowflake) => snowflake,
             Commands::Rand(rand) => rand,
+            Commands::Password(pw) => pw,
         }
     }
 }

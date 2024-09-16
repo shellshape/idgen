@@ -1,10 +1,9 @@
-use std::ops::RangeInclusive;
-
 use super::Generator;
-use crate::Cli;
+use crate::{util, Cli};
 use anyhow::Result;
 use clap::Args;
 use rand::{rngs::OsRng, Rng};
+use std::ops::RangeInclusive;
 
 #[derive(Args, Clone)]
 pub(crate) struct Rand {
@@ -49,14 +48,7 @@ impl Generator for Rand {
             .or(chars_ranges)
             .unwrap_or_else(|| chars_from_ranges(&['!'..='_', 'a'..='~']));
 
-        let mut rng = OsRng;
-        let mut res = vec!['\0'; self.len];
-        for _ in 0..self.len {
-            let n = rng.gen_range(0..chars.len());
-            res.push(chars[n]);
-        }
-
-        Ok(res.iter().collect())
+        Ok(util::random_string(self.len, &chars))
     }
 }
 

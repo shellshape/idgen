@@ -1,3 +1,4 @@
+pub mod password;
 pub mod rand;
 pub mod snowflake;
 pub mod uuid;
