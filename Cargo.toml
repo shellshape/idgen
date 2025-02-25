@@ -13,4 +13,4 @@ uuid = { version = "1", features = ["v4"] }
 rs-snowflake = "*"
 xid = "1"
 string-join = "*"
-rand = "*"
+rand = "0.8"
